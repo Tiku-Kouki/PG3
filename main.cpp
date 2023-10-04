@@ -16,15 +16,9 @@ const char* Min(char a, char b) {
 	
 }
 
-
-
 int main(){
-
 	printf("%d\n", Min<int>(114, 514));
 	printf("%f\n", Min<float>(114, 514));
 	printf("%lf\n", Min<double>(614, 514));
 	printf("%s\n", Min('a', 'b'));
-
-
-
 }
