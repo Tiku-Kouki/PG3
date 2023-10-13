@@ -101,11 +101,11 @@ int main() {
 	int num = 0;
 	
 
-	printf("start\n");
+	
 
 	int letter;
 
-	printf("%d\n",n);
+	
 	printf("‹ô‘R‚È‚ç0Šï”‚È‚ç1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
 
 	scanf_s("%d", &letter);
