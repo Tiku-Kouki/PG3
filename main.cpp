@@ -72,7 +72,7 @@ void Dice(int Rand, int a) {
 	else
 	if (a > 1 || a < 0) {
 
-		printf("0,1@ˆÈŠO‚Í‘Î‰ž‚µ‚Ä‚¢‚Ü‚¹‚ñ");
+		printf("0,1ˆÈŠO‚Í‘Î‰ž‚µ‚Ä‚¢‚Ü‚¹‚ñ");
 	}
 
 
