@@ -39,7 +39,7 @@ int Recursive(int n,int maxN, int &num) {
 
 int main() {
 
-	int n = 4;
+	int n = 8;
 	int num = 0;
 	int result;
 	int Mn = 1072;
