@@ -1,4 +1,8 @@
 #include<stdio.h>
+#include <Windows.h>
+#include <stdlib.h>
+#include <random>
+#include<time.h>
 template <typename Type>
 
 Type Max(Type a, Type b) {
@@ -15,42 +19,105 @@ const char* Max(char a, char b) {
 	return mes;
 
 }
+void PrintCorrect(void) {
+	printf("正解\n");
 
-int Recursive(int n,int maxN, int &num) {
+}
+void PrintMiss(void) {
+	printf("不正解\n");
+
+
+}
+
+
+typedef void (*PFunc)(int *);
+
+void DispResult(int* s) {
+
+	printf("%d秒待った\n",*s);
+
+
+}
+
+void setTimeout(PFunc p, int second) {
+	Sleep(second * 1000);
+
+	p(&second);
+}
+
+void Dice(int Rand, int a) {
+
+	void (*pfunc)();
+	void (*miss)();
+
+	pfunc = PrintCorrect;
+	miss = PrintMiss;
 	
-	
-	if (n <= 1) {
-		return (num +=100);
-	}
-	int result = ((Recursive(n - 1,maxN, num) * 2) - 50);
-	num +=result;
+	//Rand = rand() % 6 + 1;
 
 
-	if (n >= maxN) {
+	if ((Rand % 2 == 0 && a == 0)|| (Rand % 2 != 0 && a == 1)) {
 
-		return num;
+		pfunc();
+
 
 	}
+	else
+	if (a > 2||a<0) {
+
+		printf("対応していません");
+	}
+	else
+	{
+		miss();
+
+	}
 
 
-	return result;
+
+
 }
 
 
 int main() {
 
-	int n = 8;
+	/*void (*pfunc)();
+	pfunc = PrintHelloWorld;
+	printf("%p\n", PrintHelloWorld);
+	printf("%p\n", * pfunc);*/
+
+	//pfunc();
+
+	//乱数を初期化する
+	unsigned int currentTime = time(nullptr);
+
+	srand(currentTime);
+
+	int n = 0;
+	for (int i = 0; i <= 4; i++)
+	{
+		 n = rand() % 6 + 1;
+	}
 	int num = 0;
-	int result;
-	int Mn = 1072;
-	int result2;
-	result2 = Mn * n;
+	
 
-	result = Recursive(n,n, num);
+	printf("start\n");
 
-	printf("再帰的な資金体系:%d 一般的な資金体系:%d\n", result, result2);
+	int letter;
 
-	printf("%d\n", Max<int>(result, result2));
+	printf("%d\n",n);
+	printf("偶然なら0奇数なら1を入力してください\n");
 
-	//printf("%s\n", Min('a', 'b'));
+	scanf_s("%d", &letter);
+
+	
+
+
+	PFunc p;
+	p = DispResult;
+	setTimeout(p, 5);
+
+	Dice(n, letter);
+
+	return 0;
 }
