@@ -34,7 +34,7 @@ typedef void (*PFunc)(int *);
 
 void DispResult(int* s) {
 
-	printf("%d•b‘Ò‚Á‚½\n",*s);
+	printf("%d•bŒo‰ß‚µ‚½ˆ×Œ‹‰Ê\n",*s);
 
 
 }
@@ -62,15 +62,17 @@ void Dice(int Rand, int a) {
 
 
 	}
+	
 	else
-	if (a > 2||a<0) {
-
-		printf("‘Î‰ž‚µ‚Ä‚¢‚Ü‚¹‚ñ");
-	}
-	else
+	if((Rand % 2 == 0 || a == 1) && (Rand % 2 != 0 && a == 0))
 	{
 		miss();
 
+	}
+	else
+	if (a > 1 || a < 0) {
+
+		printf("0,1@ˆÈŠO‚Í‘Î‰ž‚µ‚Ä‚¢‚Ü‚¹‚ñ");
 	}
 
 
@@ -112,11 +114,11 @@ int main() {
 
 	
 
-
-	PFunc p;
-	p = DispResult;
-	setTimeout(p, 5);
-
+	if (letter == 0 || letter == 1) {
+		PFunc p;
+		p = DispResult;
+		setTimeout(p, 3);
+	}
 	Dice(n, letter);
 
 	return 0;
