@@ -16,17 +16,17 @@ const char* Max(char a, char b) {
 
 }
 
-int Recursive(int n, int &num) {
+int Recursive(int n,int maxN, int &num) {
 	
 	
 	if (n <= 1) {
 		return (num +=100);
 	}
-	int result = ((Recursive(n - 1, num) * 2) - 50);
+	int result = ((Recursive(n - 1,maxN, num) * 2) - 50);
 	num +=result;
 
 
-	if (n >= 4) {
+	if (n >= maxN) {
 
 		return num;
 
@@ -46,7 +46,7 @@ int main() {
 	int result2;
 	result2 = Mn * n;
 
-	result = Recursive(n, num);
+	result = Recursive(n,n, num);
 
 	printf("Ä‹A“I‚È‘‹à‘ÌŒn:%d ˆê”Ê“I‚È‘‹à‘ÌŒn:%d\n", result, result2);
 
