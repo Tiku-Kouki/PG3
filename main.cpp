@@ -59,27 +59,33 @@ void Dice(int Rand, int a) {
 	if ((Rand % 2 == 0 && a == 0)|| (Rand % 2 != 0 && a == 1)) {
 
 		pfunc();
-
+		printf("出た出目は%d\n", Rand);
 
 	}
 	
 	else
-	if((Rand % 2 == 0 || a == 1) && (Rand % 2 != 0 && a == 0))
+	if((Rand % 2 == 0 && a == 1) || (Rand % 2 != 0 && a == 0))
 	{
 		miss();
-
+		printf("出た出目は%d\n", Rand);
 	}
-	else
-	if (a > 1 || a < 0) {
-
-		printf("0,1以外は対応していません");
-	}
+	
 
 
 
 
 }
 
+int scan(int letter) {
+
+	scanf_s("%d", &letter);
+	if (letter == 0||letter == 1) {
+
+		return letter;
+	}
+
+	return scan(letter);
+}
 
 int main() {
 
@@ -105,14 +111,15 @@ int main() {
 
 	
 
-	int letter;
-
+	int letter = 0;
+	int result;
+	
 	
 	printf("偶然なら0奇数なら1を入力してください\n");
 
-	scanf_s("%d", &letter);
+	//scanf_s("%d", &letter);
 
-	
+	result = scan(letter);
 
 	if (letter == 0 || letter == 1) {
 		PFunc p;
