@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <random>
 #include<time.h>
+#include <functional>
 template <typename Type>
 
 Type Max(Type a, Type b) {
@@ -39,10 +40,10 @@ void DispResult(int* s) {
 
 }
 
-void setTimeout(PFunc p, int second) {
+void setTimeout(int second) {
 	Sleep(second * 1000);
 
-	p(&second);
+	
 }
 
 void Dice(int Rand, int a) {
@@ -62,9 +63,8 @@ void Dice(int Rand, int a) {
 
 
 	}
-	
 	else
-	if((Rand % 2 == 0 || a == 1) && (Rand % 2 != 0 && a == 0))
+	if((Rand % 2 == 0 && a == 1) || (Rand % 2 != 0 && a == 0))
 	{
 		miss();
 
@@ -81,7 +81,7 @@ void Dice(int Rand, int a) {
 }
 
 
-int main() {
+int main(int argc,const char *argv[]) {
 
 	/*void (*pfunc)();
 	pfunc = PrintHelloWorld;
@@ -96,10 +96,9 @@ int main() {
 	srand(currentTime);
 
 	int n = 0;
-	for (int i = 0; i <= 4; i++)
-	{
-		 n = rand() % 6 + 1;
-	}
+	
+	n = rand() % 6 + 1;
+	
 	int num = 0;
 	
 
@@ -107,19 +106,25 @@ int main() {
 
 	int letter;
 
+	std::function<int(int)> fx = [](int i) {return i; };
 	
-	printf("‹ô‘R‚È‚ç0Šï”‚È‚ç1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
+	printf("%d\n",n);
+	printf("‹ô‘R‚È‚ç0,Šï”‚È‚ç1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
 
 	scanf_s("%d", &letter);
 
 	
 
 	if (letter == 0 || letter == 1) {
-		PFunc p;
-		p = DispResult;
-		setTimeout(p, 3);
+		
+		
+		setTimeout(3);
+		printf("‘I‚Î‚ê‚½–Ú:%d\n", fx(n));
+		
 	}
-	Dice(n, letter);
-
+	
+	Dice(fx(n), letter);
+	
 	return 0;
+
 }
