@@ -83,7 +83,7 @@ int scan(int letter) {
 
 		return letter;
 	}
-	printf("‹ô‘R‚È‚ç0Šï”‚È‚ç1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
+	printf("0 or 1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n");
 	return scan(letter);
 }
 
