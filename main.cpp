@@ -1,24 +1,47 @@
 #include<stdio.h>
-template <typename Type>
+template <typename Type, typename Type2>
 
-Type Min(Type a, Type b) {
-	if (a < b) {
-		return a ;
+
+class Box {
+public:
+
+	Type a;
+	Type2 b;
+
+	Box(Type a, Type2 b) : a(a), b(b) {};
+
+
+	Type Min(Type a, Type2 b) {
+		if (a < b) {
+			return static_cast<Type>(a);
+		}
+		return static_cast<Type2>(b);
 	}
-	return b;
-}
 
-const char* Min(char a, char b) {
+};
 
-	const char* mes = "”šˆÈŠO‘ã“ü‚Å‚«‚Ü‚¹‚ñ";
-	
-	return mes;
-	
-}
 
-int main(){
-	printf("%d\n", Min<int>(114, 514));
-	printf("%f\n", Min<float>(114, 514));
-	printf("%lf\n", Min<double>(614, 514));
-	printf("%s\n", Min('a', 'b'));
+
+
+int main() {
+	Box<int,int> b1(11, 51);
+	Box<float,float> b2(11, 51);
+	Box<double,double> b3(11, 51);
+	Box<int, float> b4(11, 51);
+	Box<float, double> b5(11, 51);
+	Box<double, int> b6(11, 51);
+
+
+
+
+	printf("int,int:%d\n", b1.Min(1, 15));
+	printf("float,float:%f\n", b2.Min(2, 8));
+	printf("double,double:%lf\n", b3.Min(9, 10));
+
+	printf("int, float:%d\n", b4.Min(1, 15));
+	printf("float, double:%f\n", b5.Min(2, 8));
+	printf("double, int:%lf\n", b6.Min(9, 10));
+
+
+
 }
