@@ -1,0 +1,20 @@
+#pragma once
+#include "IShape.h"
+#include<stdio.h>
+class Rectangle :public IShape
+{
+public:
+	Rectangle();
+	~Rectangle();
+
+	//âºëzä÷êî
+	void size() override;
+	//âºëzä÷êî
+	void draw() override;
+
+private:
+
+	int answer;
+
+};
+

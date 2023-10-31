@@ -1,24 +1,28 @@
 #include<stdio.h>
-#include "Cat.h"
-#include "Dog.h"
+#include "Circle.h"
+#include "Rectangle.h"
 
 
 
 
 int main() {
 	
-	printf("出現フェーズ\n");
-	Animal* animals[2];
+	
+	IShape* shape[2];
 
-	animals[0] = new Cat;
-	animals[1] = new Dog;
-	printf("咆哮フェーズ\n");
-	animals[0]->Bark();
-	animals[1]->Bark();
+	shape[0] = new Circle;
+	shape[1] = new Rectangle;
+	
 
-	printf("撤退フェーズ\n");
+	shape[0]->size();
+	shape[1]->size();
+
+	shape[0]->draw();
+	shape[1]->draw();
+
+	
 	for (int i = 0; i < 2; i++) {
-		delete animals[i];
+		delete shape[i];
 	}
 
 	return 0;
