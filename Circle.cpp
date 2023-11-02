@@ -1,4 +1,6 @@
 #include "Circle.h"
+#include <math.h>
+#define M_PI 3.14159
 
 Circle::Circle()
 {
@@ -10,12 +12,13 @@ Circle::~Circle()
 
 void Circle::size()
 {
-	answer = (bottom * height) / 2;
-
+	
+	answer = (radius * radius) * float(M_PI);
+	
 }
 
 void Circle::draw()
 {
-	printf("éOäpå`ÇÃñ êœÇÕ%d\n", answer);
+	printf("â~ÇÃñ êœÇÕ%0.1f\n", answer);
 
 }

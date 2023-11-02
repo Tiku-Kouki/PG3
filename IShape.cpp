@@ -3,7 +3,7 @@
 
 IShape::IShape(){
 
-	printf("’ê•Ó:%d  ‚‚³:%d\n", bottom, height);
+	printf("’ê•Ó:%d  ‚‚³:%d ”¼Œa:%0.1f\n", bottom, height,radius);
 
 
 }
