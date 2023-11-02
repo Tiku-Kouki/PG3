@@ -10,7 +10,7 @@ public:
 	void Bark() override;
 
 private:
-	Animal* animal = nullptr;
+	
 
 };
 
