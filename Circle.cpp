@@ -19,6 +19,8 @@ void Circle::size()
 
 void Circle::draw()
 {
+	printf("îºåa:%0.1f\n", radius);
+
 	printf("â~ÇÃñ êœÇÕ%0.1f\n", answer);
 
 }

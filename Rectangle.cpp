@@ -15,5 +15,7 @@ void Rectangle::size()
 
 void Rectangle::draw()
 {
+	printf("’ê•Ó:%d  ‚‚³:%d\n", bottom, height);
+
 	printf("’ZŒ`‚Ì–ÊÏ‚Í%d\n", answer);
 }
