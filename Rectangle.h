@@ -18,7 +18,7 @@ private:
 
 	const int bottom = 10;
 	const int height = 30;
-	const float radius = 5;
+	
 
 };
 
