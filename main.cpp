@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 
-	//const@char*‚Í•À‚×‘Ö‚¦‚É‚Í‘Î‰‚µ‚Ä‚¢‚È‚¢
+	//const@char*‚Í•À‚×‘Ö‚¦‚É‚Í‘Î‰‚µ‚Ä‚¢‚È‚¢‚Ì‚Å•¶š—ñ‚Ì”z—ñ‚Ístring‚ª‚¢‚¢
 	vector<string> lst{
 	"k022g0108@g.neec.ac.jp","k022g0045@g.neec.ac.jp","k022g0007@g.neec.ac.jp",
 	"k022g0015@g.neec.ac.jp","k022g0028@g.neec.ac.jp","k022g0049@g.neec.ac.jp",
